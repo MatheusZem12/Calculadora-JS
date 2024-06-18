@@ -472,4 +472,16 @@ class CalcController {
 
     }
 
+    get locale(){
+
+        return this._locale;
+
+    }
+
+    set locale(value){
+
+        this._locale = value;
+        
+    }
+
 }
