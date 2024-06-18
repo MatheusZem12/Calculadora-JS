@@ -3,16 +3,25 @@ class CalcController {
     constructor(){
 
         this._lastOperator = '';
+
         this._lastNumber = '';
 
         this._operation = [];
+
         this._locale = 'pt-BR';
+
         this._displayCalcEl = document.querySelector("#display");
+
         this._dateEl = document.querySelector("#data");
+
         this._timeEl = document.querySelector("#hora");
+
         this._currentDate;
+
         this.initialize();
+
         this.initButtonsEvents();
+
         this.initKeyboard();
 
     }
@@ -58,6 +67,7 @@ class CalcController {
         }, 1000);
 
         this.setLastNumberToDisplay();
+
         this.pasteFromClipboard;
 
     }
@@ -130,7 +140,9 @@ class CalcController {
     clearAll(){
 
         this._operation = [];
+
         this._lastNumber = '';
+
         this._lastOperator = '';
 
         this.setLastNumberToDisplay();
@@ -176,8 +188,6 @@ class CalcController {
     }
 
     getResult(){
-
-
 
         return eval(this._operation.join(""));
 
@@ -416,10 +426,15 @@ class CalcController {
     setDisplayDateTime(){
 
         this.displayDate = this.currentDate.toLocaleDateString(this._locale, {
+
             day: "2-digit",
+
             month: "long",
+
             year: "numeric"
+
         });
+        
         this.displayTime = this.currentDate.toLocaleTimeString(this._locale);
 
     }
@@ -481,7 +496,7 @@ class CalcController {
     set locale(value){
 
         this._locale = value;
-        
+
     }
 
 }
